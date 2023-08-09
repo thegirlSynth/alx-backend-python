@@ -9,7 +9,7 @@ task_wait_random = __import__('3-tasks').task_wait_random
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
-    This task calls task_wait_random a couple of times, 
+    This task calls task_wait_random a couple of times,
     a function that returns an asyncio Task that spawns wait_random
     and then returns a list of delays
     """
