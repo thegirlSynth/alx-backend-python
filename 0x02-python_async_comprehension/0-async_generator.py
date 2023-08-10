@@ -5,9 +5,10 @@ Contains a coroutine async_generator"
 
 import asyncio
 import random
+from typing import Generator
 
 
-async def async_generator() -> float:
+async def async_generator() -> Generator[float, None, None]:
     """
     Generates 10 random floats between 0 and 10
     """
