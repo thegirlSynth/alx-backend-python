@@ -4,7 +4,8 @@ This module contains an asynchronous coroutine.
 """
 
 from typing import List
-wait_random = __import__('0-basic_async_syntax').wait_random
+
+wait_random = __import__("0-basic_async_syntax").wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
@@ -16,7 +17,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     delay_list = []
     index = 0
 
-    while index < n:
+    for i in range(n):
         delay = await wait_random(max_delay)
         delay_list.append(delay)
         index += 1
