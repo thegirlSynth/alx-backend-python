@@ -23,11 +23,16 @@ class TestAccessNestedMap(unittest.TestCase):
         ]
     )
     def test_access_nested_map(self, nested_map, path, expected):
+        """
+        Tests the utils.access_nested_map function
+        """
         result = access_nested_map(nested_map, path)
         self.assertEqual(result, expected)
 
     @parameterized.expand([({}, ("a",)), ({"a": 1}, ("a", "b"))])
     def test_access_nested_map_exception(self, nested_map, path):
+        """
+        Tests that utils.access-nested_map correctly raises exceptions"""
         with self.assertRaises(KeyError):
             access_nested_map(nested_map, path)
 
@@ -44,6 +49,9 @@ class TestGetJson(unittest.TestCase):
         ],
     )
     def test_get_json(self, test_url, test_payload):
+        """
+        Tests that utils.get_json functions properly
+        """
         my_mock = Mock()
         my_mock.json.return_value = test_payload
 
@@ -59,7 +67,15 @@ class TestMemoize(unittest.TestCase):
     """
 
     def test_memoize(self):
+        """
+        Creates a Testclass for testing the utils.memoize decorator
+        """
+
         class TestClass:
+            """
+            Instantiates a test class
+            """
+
             def a_method(self):
                 return 42
 
